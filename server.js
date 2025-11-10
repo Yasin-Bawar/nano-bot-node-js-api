@@ -4,6 +4,7 @@ const os = require("os");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Function to get the private IPv4 (LAN) of this machine
 function getPrivateIPv4() {
   const ifaces = os.networkInterfaces();
   for (const name of Object.keys(ifaces)) {
@@ -20,6 +21,7 @@ function getPrivateIPv4() {
   return null;
 }
 
+// Local API endpoint
 app.get("/api/ip", (req, res) => {
   const ipInfo = getPrivateIPv4();
   if (!ipInfo) {
@@ -29,5 +31,5 @@ app.get("/api/ip", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Local IP API running at http://localhost:${PORT}/api/ip`);
 });

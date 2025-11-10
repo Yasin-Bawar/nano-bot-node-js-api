@@ -1,7 +1,7 @@
 {
-  "name": "node-ip-api",
+  "name": "local-ip-api",
   "version": "1.0.0",
-  "description": "Simple Node API to return server private IPv4",
+  "description": "Local Node API to return machine's private IPv4",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
